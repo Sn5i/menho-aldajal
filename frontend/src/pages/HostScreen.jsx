@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import { QRCodeCanvas } from 'qrcode.react';
 
-const socket = io(`http://${window.location.hostname}:3001`);
+const socket = io('https://menho-aldajal-backend.onrender.com');
 
 export default function HostScreen() {
   const [roomCode, setRoomCode] = useState(null);
@@ -44,7 +44,7 @@ export default function HostScreen() {
     }
   }, [gameState, timeLeft]);
 
-  const joinUrl = `http://${window.location.hostname}:5173/join/${roomCode}`;
+  const joinUrl = `${window.location.origin}/join/${roomCode}`;
 
   // 🌟 NEW BEAUTIFIED FINAL SCOREBOARD 🌟
   if (gameState === 'scoreboard') {

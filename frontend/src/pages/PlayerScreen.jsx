@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { io } from 'socket.io-client';
 
-const socket = io(`http://${window.location.hostname}:3001`);
+const socket = io('https://menho-aldajal-backend.onrender.com');
 
 export default function PlayerScreen() {
   const { roomCode } = useParams();
